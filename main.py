@@ -23,7 +23,7 @@ admins = [1477027628, 1215724942]
 
 @dp.message(CommandStart())
 async def start_command(msg: Message):
-    await msg.answer('Привет! Я - бот предложка постов в канале [MediaHUB](https://t.me/media_hubSPb)')
+    await msg.answer('Йоу! Мы команда [MEDIA HUB](https://t.me/media_hubSPb).\nНапиши нам идеи постов, мемы или обратную связь.')
 
 @dp.message()
 async def handle_message(msg: Message):
@@ -38,7 +38,7 @@ async def handle_message(msg: Message):
     message_text = f"Новое сообщение от {user_link}:\n\n{msg.text}"
     for admin_id in admins:
         await bot.send_message(chat_id=admin_id, text=message_text, parse_mode=ParseMode.MARKDOWN)
-    await msg.answer('Ваше сообщение отправлено администраторам на проверку.')
+    await msg.answer('Если контент пройдёт модерацию, то ты увидишь его в канале MEDIA HUB!)
 
 
 async def main() -> None:
